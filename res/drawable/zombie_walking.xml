@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+	<item android:drawable="@drawable/skeleton_walk500" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk501" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk502" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk503" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk504" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk505" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk506" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk507" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk508" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk509" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk510" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk511" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk512" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk513" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk514" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk515" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk516" android:duration="60" />
+	<item android:drawable="@drawable/skeleton_walk517" android:duration="60" />
+	
+</animation-list>
