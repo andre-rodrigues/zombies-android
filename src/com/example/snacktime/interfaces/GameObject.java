@@ -1,4 +1,4 @@
-package com.example.snacktime;
+package com.example.snacktime.interfaces;
 
 public interface GameObject {
 	public void update();

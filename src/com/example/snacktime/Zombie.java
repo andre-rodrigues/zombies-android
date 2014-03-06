@@ -1,5 +1,8 @@
 package com.example.snacktime;
 
+import com.example.snacktime.interfaces.Collidable;
+import com.example.snacktime.interfaces.GameObject;
+
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.widget.ImageView;
@@ -72,7 +75,7 @@ public class Zombie extends ImageView implements GameObject, Collidable{
 	public void update() {
 		checkBoundaries();
 		
-		setPosition((float) (this.x + this.vx), (float) (this.y + this.vy));
+		setPosition(this.x + this.vx, this.y + this.vy);
 	}
 	
 	public void checkBoundaries() {
