@@ -1,18 +1,23 @@
 package com.example.snacktime;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.os.AsyncTask;
+
+import com.example.snacktime.interfaces.GameObject;
 
 public class Game {
 	private boolean isRunning = false;
 	private GameLoop gameLoop;
 	private static Game instance;
+	public ArrayList<GameObject> gameObjects;
 	
 	private OnStopListener stopListener;
 	
 	private Game() {
-		gameLoop = new GameLoop();
+		gameObjects = new ArrayList<GameObject>();
+		gameLoop = new GameLoop(this);
 	}
 	
 	public static Game getInstance() {
@@ -24,11 +29,19 @@ public class Game {
 	}
 	
 	public void addGameObject(GameObject object) {
-		gameLoop.gameObjects.add(object);
+		gameObjects.add(object);
+	}
+	
+	public List<GameObject> getGameObjects() {
+		return gameObjects;	
 	}
 	
 	public boolean removeGameObject(GameObject object) {
-		return gameLoop.gameObjects.remove(object);
+		return gameObjects.remove(object);
+	}
+	
+	public GameObject removeGameObject(int index) {
+		return gameObjects.remove(index);
 	}
 	
 	public void start() {
@@ -57,13 +70,13 @@ public class Game {
 	
 	// Background Loop
 	private class GameLoop extends AsyncTask<Void, Void, Void> {
-		public ArrayList<GameObject> gameObjects;
 		private long start;
 		private long elapsedTime;
 		private int fps = 0;
+		private Game game;
 		
-		public GameLoop() {
-			gameObjects = new ArrayList<GameObject>();
+		public GameLoop(Game game) {
+			this.game = game;
 		}
 
 		@Override
@@ -73,7 +86,7 @@ public class Game {
 			while(!isCancelled()) {
 				start = System.currentTimeMillis();
 				
-				for(final GameObject object : gameObjects) {
+				for(final GameObject object : game.getGameObjects()) {
 					object.post(new Runnable() {
 	
 						@Override
